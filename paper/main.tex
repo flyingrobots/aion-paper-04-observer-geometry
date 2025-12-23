@@ -187,10 +187,11 @@ Write
 \[
   \Apply : \WState \times \Labels \rightharpoonup \WState
 \]
-for the deterministic tick-application function.
-A \emph{tick patch} is an element $\mu\in\Labels$ (intended to be applied via $\Apply$).
-A \emph{tick} is the unit of concurrent evolution: it groups attachment-plane rewrites together with a scheduler-selected batch of independent skeleton rewrites, committed atomically (Paper~II, Def.~4.2).
-A deterministic worldline is a sequence
+	for the deterministic tick-application function.
+	A \emph{tick patch} is an element $\mu\in\Labels$ (intended to be applied via $\Apply$).
+	Intuitively, a tick patch is the serialised record of the within-tick batch committed at that tick.
+	A \emph{tick} is the unit of concurrent evolution: it groups attachment-plane rewrites together with a scheduler-selected batch of independent skeleton rewrites, committed atomically (Paper~II, Def.~4.2).
+	A deterministic worldline is a sequence
 \[
   U_0 \;\Rightarrow\; U_1 \;\Rightarrow\; \cdots \;\Rightarrow\; U_n
 \qquad\text{with}\qquad
@@ -643,6 +644,7 @@ Letting $\varepsilon\to 0$ completes the proof.
 Together with Theorem~\ref{thm:rulial-basic}, Theorem~\ref{thm:rulial-triangle} makes $D_{\tau,m}$ a
 quasi-pseudometric: it satisfies all pseudometric axioms except that the triangle inequality holds only up to an additive constant $2c$.
 In practice $c$ is a small, fixed prefix-coding overhead; it may also be absorbed into $\lambda$ if desired.
+The geometry is most informative when translation costs scale nontrivially with history size, or when comparing asymptotically distinct observer classes (e.g.\ $O(1)$ vs $O(N)$), in which regime the constant $c$ becomes negligible.
 \end{remark}
 
 \subsection{Lawvere-metric (enriched category) viewpoint}
@@ -804,6 +806,8 @@ This captures an engineering reality: a short programme can still be computation
 In particular, under the two-plane \WARP\ semantics (Paper~II), a state decomposes into a skeleton together with recursively
 attached sub-states; translating a boundary observer into a bulk observer amounts to \emph{expanding} these attachment fibres
 across the committed tick sequence, work that can be infeasible under strict $(\tau,m)$ budgets.
+Wormholes (Paper~III) are precisely provenance-preserving compressions of multi-tick segments into single labelled edges; a bulk observer ``sees inside''
+only by replaying (and hence expanding) the corresponding sub-payload.
 \end{remark}
 
 \sectionbreak
@@ -941,8 +945,8 @@ Formally, Kairos may be modelled as a subgraph (or event structure) of $\MW(\mat
 \end{definition}
 
 \begin{definition}[Aion]\label{def:aion}
-\emph{Aion time} is the encompassing possibility space: the full multiway history category $\Hist(\mathcal{U},R)$,
-or, at the largest scale, the Ruliad history space $\Ruliad$.
+\emph{Aion time} is the history category $\Hist(\mathcal{U},R)$: the possibility space of all finite derivations in the multiway graph.
+At the largest scale, the Ruliad history space $\Ruliad$ (Definition~\ref{def:ruliad}) is the disjoint union of such Aion categories across initial states and rule packs.
 \end{definition}
 
 \subsection{Temporal logic on Chronos--Kairos--Aion}
@@ -1060,6 +1064,7 @@ In practice, robustness is enforced by canonicalisation or coarse-graining of tr
 We then define propositions on such a canonicalised or coarse-grained view of the trace
 (normalising order, discarding nonce-like fields, bucketing timestamps), or we use approximate matching,
 so that minor log variation does not alter the high-level truth values being checked.
+Conversely, if an observer suppresses events relevant to a predicate (for example by strong summarisation), then either the predicate is not $\delta$-robust under the chosen trace metric or the translation distortion exceeds $\delta$; Proposition~\ref{prop:temporal-transport} is intentionally restricted to the robust regime.
 \end{remark}
 
 \begin{proof}
