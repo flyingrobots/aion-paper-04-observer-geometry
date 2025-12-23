@@ -1,0 +1,49 @@
+{
+  "title": "WARP Graphs: Rulial Distance & Observer Geometry",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "access_right": "open",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Ross, James",
+      "affiliation": "Independent Researcher",
+      "orcid": "0009-0006-0025-7801"
+    }
+  ],
+  "description": "This paper develops a formal geometry of observers for deterministic, provenance-carrying computation, concluding the mathematical core of the AIΩN Foundations Series.\n\nObservers are modelled as resource-bounded functors from a history category induced by multiway WARP graph rewriting into spaces of traces. Different observers may legitimately produce different descriptions of the same underlying deterministic worldline; these differences are treated not as semantic disagreement but as translation problems under explicit time and memory budgets.\n\nTo compare observers, the paper introduces a translation framework equipped with Minimum Description Length (MDL) as a measure of translator complexity and a lifted trace distortion metric. From these ingredients it defines the rulial distance, a budgeted, MDL-regularised distance on observer space. Under standard assumptions (subadditivity of description length and non-expansiveness of translators), the directed translation cost admits a Lawvere-metric (enriched-category) interpretation, and the symmetrised rulial distance is shown to be a quasi-pseudometric satisfying the triangle inequality up to constant additive slack.\n\nThe paper further relates deterministic warp rewriting to multiway systems and formalises the Chronos–Kairos–Aion triad as a three-layer time model: Chronos (the committed linear worldline), Kairos (branch events), and Aion (the encompassing possibility space). A minimal temporal logic aligned with this triad is developed, illustrating how linear-time and branch-quantified temporal properties are interpreted over histories and how such claims transport across observers under low-distortion translation.\n\nThe resulting observer geometry provides a computable notion of frame separation: the cost of translating between different descriptions of the same computation under explicit resource constraints.",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "AIΩN",
+    "AIΩN Foundations",
+    "WARP graphs",
+    "observer geometry",
+    "rulial distance",
+    "deterministic computation",
+    "deterministic replay",
+    "multiway systems",
+    "Ruliad",
+    "history categories",
+    "provenance",
+    "observer translation",
+    "Minimum Description Length",
+    "MDL",
+    "Lawvere metric",
+    "enriched category",
+    "temporal logic",
+    "Chronos",
+    "Kairos",
+    "Aion",
+    "graph rewriting",
+    "algebraic graph transformation",
+    "adhesive categories",
+    "category theory"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/flyingrobots/aion",
+      "relation": "isPartOf",
+      "resource_type": "software"
+    }
+  ]
+}
