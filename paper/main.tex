@@ -732,12 +732,12 @@ This is typical of Lawvere metric spaces: translation is compositional, but symm
 
 \begin{figure}[t]
   \centering
-	  \begin{tikzpicture}[
-	      obs/.style={draw=black,thick,rounded corners=3pt,inner sep=6pt,align=center,font=\scriptsize},
-	      arr/.style={-Latex,thick,draw=black},
-	      maybe/.style={-Latex,thick,draw=black!70,dash pattern=on 4pt off 2pt},
-	      >=Latex
-	    ]
+		  \begin{tikzpicture}[
+		      obs/.style={draw=black,thick,rounded corners=3pt,inner sep=6pt,align=center,font=\scriptsize},
+		      arr/.style={-Latex,thick,draw=black},
+		      maybe/.style={-Latex,thick,draw=black!70,dash pattern=on 6pt off 4pt},
+		      >=Latex
+		    ]
 
     \node[obs] (Op) at (0,0) {$O_{\partial}$\\boundary};
     \node[obs] (Ob) at (10.0,0) {$O_{bulk}^{+}$\\bulk$+$};
@@ -1028,6 +1028,8 @@ In contrast, $\mathbf{E}\,\mathbf{F}\,p_{\mathrm{merge}}$ asserts only that \emp
 which is strictly weaker when divergence is possible.
 \end{example}
 
+To ensure temporal claims are stable under small representation-level discrepancies between traces, we will assume a $\delta$-robustness condition on atomic propositions.
+
 \begin{proposition}[Temporal properties transport along low-distortion translation]\label{prop:temporal-transport}
 Fix $\delta\ge 0$ and assume each atomic proposition $p\in\mathsf{AP}$ is \emph{$\delta$-robust} in trace space:
 whenever $\mathrm{dist}_{\mathrm{tr}}(t,t')\le\delta$ we have $p(t)=p(t')$.
@@ -1152,8 +1154,12 @@ Rulial distance turns the question ``how different are these forms?'' into a qua
 
 Several directions remain open, but they are now delineated:
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Ethics (Paper V).} Once perfect provenance and deterministic replay are available, the principal questions are social:
-        accountability, privacy, governance, and the power implied by reversible history.
+  \item \textbf{Ethics (Paper V).} Once perfect provenance and deterministic replay are available, the principal questions shift from mathematics to governance.
+        When provenance records cognitive processes---whether of autonomous digital agents or hybrid human--AI systems---replay becomes an ethically significant act,
+        not a neutral debugging primitive.
+        Paper~V develops \emph{provenance sovereignty}: an agent's right to control capture, inspection, replay, and branching of its worldline.
+        We extract runtime-level requirements (consent, revocation, capability-scoped observers, cryptographic sealing, and fork rights) and show how they constrain
+        the design of replay tooling and provenance payload formats.
   \item \textbf{Architecture (Paper VI).} The system design question is how to build a machine whose primitive step is a provenance-carrying \WARP\ rewrite,
         with efficient storage, slicing, and multiverse debugging.
 \end{itemize}
