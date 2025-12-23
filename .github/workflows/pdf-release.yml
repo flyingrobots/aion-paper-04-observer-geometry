@@ -29,15 +29,15 @@ jobs:
         with:
           root_file: main.tex
           working_directory: paper
-          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -jobname=aion-paper-03-computational-holography-provenance-payloads -output-directory=../pdf
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode -jobname=aion-paper-04-observer-geometry -output-directory=../pdf
         env:
           TEXINPUTS: "..:.:"
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
         with:
-          name: aion-paper-03-pdf
-          path: pdf/aion-paper-03-computational-holography-provenance-payloads.pdf
+          name: aion-paper-04-pdf
+          path: pdf/aion-paper-04-observer-geometry.pdf
           if-no-files-found: error
 
       - name: Create GitHub Release with PDF
@@ -46,5 +46,5 @@ jobs:
         with:
           tag_name: pdf-${{ github.sha }}
           name: PDF build ${{ github.sha }}
-          files: pdf/aion-paper-03-computational-holography-provenance-payloads.pdf
+          files: pdf/aion-paper-04-observer-geometry.pdf
           fail_on_unmatched_files: true
