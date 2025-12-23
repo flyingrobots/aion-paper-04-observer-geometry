@@ -4,7 +4,7 @@
 
 |  |  |  |
 |--|--|--|
-| **DOI** | `10.5281/zenodo.17963669` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17963669.svg)](https://doi.org/10.5281/zenodo.17963669) |
+| **DOI** | `10.5281/zenodo.18038297` | [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038297.svg)](https://doi.org/10.5281/zenodo.18038297) |
 
 **Status:** Published (Zenodo)
 
