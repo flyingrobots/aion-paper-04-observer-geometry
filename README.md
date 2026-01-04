@@ -10,11 +10,11 @@
 
 ### Front Matter
 
-WARP Graphs: Rulial Distance & Observer Geometry
-James Ross (ORCID: [0009-0006-0025-7801](https://orcid.org/0009-0006-0025-7801))
-Independent Researcher
-AIΩN Foundations Series — Paper IV
-December 2025
+WARP Graphs: Rulial Distance & Observer Geometry  
+James Ross (ORCID: [0009-0006-0025-7801](https://orcid.org/0009-0006-0025-7801))  
+Independent Researcher  
+AIΩN Foundations Series — Paper IV  
+December 2025  
 
 ---
 
